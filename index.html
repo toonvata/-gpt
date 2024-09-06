@@ -440,7 +440,9 @@
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
 
-            doc.setFont("Sarabun-Regular");
+           doc.addFont('https://fonts.gstatic.com/s/sarabun/v13/DtVmJx26TKEr37c9YOZqik8s6zDX.woff2', 'Sarabun', 'normal');
+            doc.setFont('Sarabun');
+
             doc.setFontSize(12);
 
             // หัวกระดาษ
@@ -484,7 +486,8 @@
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
 
-            doc.setFont("Sarabun-Regular");
+          doc.addFont('https://fonts.gstatic.com/s/sarabun/v13/DtVmJx26TKEr37c9YOZqik8s6zDX.woff2', 'Sarabun', 'normal');
+    doc.setFont('Sarabun');
             doc.setFontSize(12);
 
             // หัวกระดาษ
