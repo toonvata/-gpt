@@ -6,6 +6,9 @@
     <title>ระบบบันทึกประวัติผู้ป่วยและการรักษา</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
     <style>
         body { font-family: 'Sarabun', sans-serif; margin: 0; padding: 20px; background-color: #f0f0f0; }
         .container { max-width: 1200px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
@@ -116,7 +119,7 @@
             <div id="treatmentDetailContent"></div>
         </div>
     </div>
-
+     
     <script>
         let patients = JSON.parse(localStorage.getItem('patients')) || [];
         let treatments = JSON.parse(localStorage.getItem('treatments')) || [];
@@ -526,6 +529,6 @@
                 modal.style.display = 'none';
             }
         }
-    </script>
+       <script src="app.js"></script>
 </body>
 </html>
