@@ -371,17 +371,44 @@
             }
         }
 
-        function updateBodyChart(dataUrl) {
-            if (dataUrl) {
-                fabric.Image.fromURL(dataUrl, function(img) {
-                    canvas.clear();
-                    canvas.add(img);
-                    canvas.renderAll();
-                });
-            } else {
-                canvas.clear();
-            }
-        }
+      function initializeBodyChart() {
+    canvas = new fabric.Canvas('bodyChart', {
+        width: 300,
+        height: 400
+     
+    });
+
+ fabric.Image.fromURL('<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/G9n4kJq8/Untitled-design.png' border='0' alt='Untitled-design'/></a><br /><a href='https://gasstation-nearme.com/'>gas station near here</a><br />', function(img) {
+         img.scaleToWidth(canvas.width);
+        canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
+    canvas.isDrawingMode = true;
+    canvas.freeDrawingBrush.width = 2;
+    canvas.freeDrawingBrush.color = "#0d0000";
+     });
+         canvas.on('path:created', function() {
+        // บันทึกสถานะปัจจุบันของ canvas ทุกครั้งที่มีการวาด
+        saveCanvasState();
+    });
+
+function saveCanvasState() {
+    // บันทึกสถานะปัจจุบันของ canvas
+    localStorage.setItem('bodyChartState', JSON.stringify(canvas.toJSON()));
+}
+
+function loadCanvasState() {
+    // โหลดสถานะที่บันทึกไว้ของ canvas
+    const savedState = localStorage.getItem('bodyChartState');
+    if (savedState) {
+        canvas.loadFromJSON(savedState, canvas.renderAll.bind(canvas));
+    }
+}
+     function clearBodyChart() {
+    canvas.clear();
+    fabric.Image.fromURL('<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/G9n4kJq8/Untitled-design.png' border='0' alt='Untitled-design'/></a><br /><a href='https://gasstation-nearme.com/'>gas station near here</a><br />', function(img) {
+        img.scaleToWidth(canvas.width);
+        canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
+        });
+    }
 
         function addSampleData() {
             if (patients.length === 0) {
