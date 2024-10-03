@@ -390,7 +390,7 @@
         // บันทึกสถานะปัจจุบันของ canvas ทุกครั้งที่มีการวาด
         saveCanvasState();
     });
-
+}
 function saveCanvasState() {
     // บันทึกสถานะปัจจุบันของ canvas
     localStorage.setItem('bodyChartState', JSON.stringify(canvas.toJSON()));
