@@ -378,7 +378,7 @@
      
     });
 
- fabric.Image.fromURL('<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/G9n4kJq8/Untitled-design.png' border='0' alt='Untitled-design'/></a><br /><a href='https://gasstation-nearme.com/'>gas station near here</a><br />', function(img) {
+ fabric.Image.fromURL('https://i.postimg.cc/G9n4kJq8/Untitled-design.png', function(img) {
          img.scaleToWidth(canvas.width);
         canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
     canvas.isDrawingMode = true;
@@ -404,7 +404,7 @@ function loadCanvasState() {
 }
      function clearBodyChart() {
     canvas.clear();
-    fabric.Image.fromURL('<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/G9n4kJq8/Untitled-design.png' border='0' alt='Untitled-design'/></a><br /><a href='https://gasstation-nearme.com/'>gas station near here</a><br />', function(img) {
+    fabric.Image.fromURL('https://i.postimg.cc/G9n4kJq8/Untitled-design.png', function(img) {
         img.scaleToWidth(canvas.width);
         canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
         });
